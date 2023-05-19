@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-undef
 module.exports = {
+  ignorePatterns : ['*.config.js'],
   env: { browser: true, es2020: true },
   extends: [
     'eslint:recommended',

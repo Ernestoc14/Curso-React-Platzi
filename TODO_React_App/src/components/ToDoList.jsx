@@ -1,8 +1,8 @@
-function ToDoList(props){
+function ToDoList({children}){
     return(
         <section>
             <ul>
-                {props.children}
+                {children}
             </ul>
         </section>
     )

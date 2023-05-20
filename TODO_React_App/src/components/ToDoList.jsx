@@ -1,7 +1,7 @@
 function ToDoList({children}){
     return(
         <section>
-            <ul>
+            <ul className="flex flex-col items-center ">
                 {children}
             </ul>
         </section>

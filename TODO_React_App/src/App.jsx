@@ -8,7 +8,8 @@ import React from 'react';
 
 const todos = [
   {text: 'lavar ropa', done: false},
-  {text: 'pasear al perro', done: true}
+  {text: 'pasear al perro', done: true},
+  {text: 'sacar la basura', done: false}
 ];
 
 function App(){

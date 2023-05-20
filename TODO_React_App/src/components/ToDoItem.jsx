@@ -1,10 +1,15 @@
-function ToDoItem({text, done}){
+import "./ToDoItem.css"
+
+function ToDoItem({text, done, onComplete, onDelete}){
     return(
-            <div>
-                <span>V {done}</span>
-                <p className="mt-2 mb-2" >{text}</p>
-                <span>X</span>
-            </div>
+            <li className="todo-item w-10/12 flex flex-row justify-around items-center h-8">
+                <button 
+                    onClick={onComplete}
+                    className={`check ${done && "check--active"}`}
+                ></button>
+                <p>{text}</p>
+                <button onClick={onDelete} className="close-item w-6 h-6"></button>
+            </li>
         )
     }
 

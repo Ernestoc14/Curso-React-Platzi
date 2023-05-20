@@ -1,0 +1,45 @@
+.todo-item {
+    list-style: none;
+    margin: 4rem 0;
+    box-shadow: rgba(0, 0, 0, 0.4 ) 0px 4px 12px;
+}
+
+.todo-item .check {
+    background: url("../assets/circle.svg") no-repeat;
+    background-size: 90%;
+    background-position: center center;
+    width: 1.9em;
+    height: 1.9em;
+    border: none;
+    cursor: pointer;
+}
+
+.todo-item .check--active {
+    background: url("../assets/check-mark.svg") no-repeat;
+    background-size: 90%;
+    background-position: center center;
+    width: 1.9em;
+    height: 1.9em;
+    border: none;
+    cursor: pointer;
+}
+
+.todo-item p {
+    width: 80%;
+}
+
+.todo-item .close-item {
+    background: url("../assets/x.svg") no-repeat;
+    background-size: 90%;
+    background-position: center center;
+    width: 1.7rem;
+    height: 1.7rem;
+    border: none;
+    cursor: pointer;
+}
+
+.todo-item .close-item:hover {
+    background: url("../assets/red-x.svg") no-repeat;
+    background-size: 90%;
+    background-position: center center;
+}

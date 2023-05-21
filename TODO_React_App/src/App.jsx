@@ -4,30 +4,29 @@ import ToDoList from './components/ToDoList';
 import ToDoItem from './components/ToDoItem';
 import CreateToDoButton from './components/CreateToDoButton';
 import './App.css';
-import React from 'react';
 
 const todos = [
-  {text: 'lavar ropa', done: false},
-  {text: 'pasear al perro', done: true},
-  {text: 'sacar la basura', done: false}
+  { text: 'lavar ropa', done: false },
+  { text: 'pasear al perro', done: true },
+  { text: 'sacar la basura', done: false }
 ];
 
-function App(){
-  return(
-    <React.Fragment>
-      <ToDoCounter done="3" left="8"/>
+function App() {
+  return (
+    <>
+      <ToDoCounter done="3" left="8" />
       <ToDoSearch />
       <ToDoList>
         {todos.map(todo => (
-          <ToDoItem 
-            key={todo.text} 
-            text={todo.text} 
+          <ToDoItem
+            key={todo.text}
+            text={todo.text}
             done={todo.done}
           />
         ))}
       </ToDoList>
       <CreateToDoButton/>
-    </React.Fragment>
+    </>
   )
 }
 

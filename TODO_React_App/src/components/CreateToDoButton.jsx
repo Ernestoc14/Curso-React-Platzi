@@ -2,8 +2,10 @@ function CreateToDoButton(){
     return(
         <button className="bg-gray-700 text-white rounded-lg p-2 mt-10"
             onClick={
-            () => console.log("Hiciste Click en Button")
-            } 
+            (event) => {
+                console.log("Hiciste Click en Button")
+                console.log(event.target)
+            }} 
         >Add a New ToDo</button>
     )
 }

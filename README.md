@@ -1,5 +1,5 @@
 # Curso-React-Platzi
-We are going to Build an App using Vite.js while learnign React Basic Concepts throug this course from @platzi
+We are building a ToDo-App using Vite.js while learning React Basic Concepts as a promps, events, useState throug this course from @platzi
 
 https://platzi.com/cursos/react/
 

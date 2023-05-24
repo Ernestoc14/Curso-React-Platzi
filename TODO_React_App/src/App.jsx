@@ -7,9 +7,9 @@ import React from 'react'
 import './App.css';
 
 const todos = [
-  { text: 'lavar ropa', done: false },
-  { text: 'pasear al perro', done: true },
-  { text: 'sacar la basura', done: false }
+  { text: 'Homeworks', done: false },
+  { text: 'Go for a walk', done: true },
+  { text: 'Take out the Trash', done: false }
 ];
 
 function App() {
@@ -17,9 +17,15 @@ function App() {
   const [searchValue, setSearchValue] = React.useState('')
 
   const doneToDos = toDos.filter(todos => todos.done).length
-  console.log(doneToDos)
   const totalToDos = toDos.length
 
+  const searchedToDos = toDos.filter(
+    (todo) => {
+      const toDoText = todo.text.toLowerCase()
+      const searchText = searchValue.toLowerCase()
+      return toDoText.includes(searchText)
+    }
+  )
   return (
     <>
       <ToDoCounter 
@@ -31,7 +37,7 @@ function App() {
         setSearchValue={setSearchValue}
       />
       <ToDoList>
-        {todos.map(todo => (
+        {searchedToDos.map(todo => (
           <ToDoItem
             key={todo.text}
             text={todo.text}

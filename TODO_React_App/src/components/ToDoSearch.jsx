@@ -1,9 +1,9 @@
 import searchIcon from '../assets/search-icon.svg';
-import React from 'react'
 
-function ToDoSearch(){
-    const [searchValue, setSearchValue] = React.useState('')
-
+function ToDoSearch({
+    searchValue,
+    setSearchValue,
+}){
     return(
         <div className='flex justify-center relative'>
             <input 

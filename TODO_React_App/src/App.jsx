@@ -42,6 +42,7 @@ function App() {
             key={todo.text}
             text={todo.text}
             done={todo.done}
+            onComplete={completeToDo}
           />
         ))}
       </ToDoList>

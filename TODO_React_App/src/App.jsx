@@ -26,6 +26,14 @@ function App() {
       return toDoText.includes(searchText)
     }
   )
+
+  const completeToDo = (text) => {
+    const newtodos = [...todos]
+    const toDoIndex = toDos.findIndex(todo => todo.text === text)
+    newtodos[toDoIndex].done = true
+    setToDos(newtodos)
+  }
+  
   return (
     <>
       <ToDoCounter 

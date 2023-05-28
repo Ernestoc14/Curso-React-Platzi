@@ -7,7 +7,9 @@ function ToDoItem({text, done, onComplete, onDelete}){
                     onClick={onComplete}
                     className={`check ${done && "check--active"}`}
                 ></button>
-                <p>{text}</p>
+                <p className={`${done && "todo-item-p-done"}`}>{text}
+                    
+                </p>
                 <button onClick={onDelete} className="close-item w-6 h-6"></button>
             </li>
         )

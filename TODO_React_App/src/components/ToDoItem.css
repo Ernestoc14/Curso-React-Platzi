@@ -28,6 +28,10 @@
     width: 80%;
 }
 
+.todo-item-p-done{
+    text-decoration: line-through;
+}
+
 .todo-item .close-item {
     background: url("../assets/x.svg") no-repeat;
     background-size: 90%;

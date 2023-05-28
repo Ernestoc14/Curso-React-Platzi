@@ -34,6 +34,13 @@ function App() {
     setToDos(newtodos)
   }
   
+  const deleteToDo = (text) => {
+    const newtodos = [...todos]
+    const toDoIndex = newtodos.findIndex(todo => todo.text === text)
+    newtodos.splice(toDoIndex, 1)
+    setToDos(newtodos)
+  }
+
   return (
     <>
       <ToDoCounter 
@@ -51,6 +58,7 @@ function App() {
             text={todo.text}
             done={todo.done}
             onComplete={()=>completeToDo(todo.text)}
+            onDelete={()=>deleteToDo(todo.text)}
           />
         ))}
       </ToDoList>

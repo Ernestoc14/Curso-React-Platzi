@@ -29,7 +29,7 @@ function App() {
 
   const completeToDo = (text) => {
     const newtodos = [...todos]
-    const toDoIndex = toDos.findIndex(todo => todo.text === text)
+    const toDoIndex = newtodos.findIndex(todo => todo.text === text)
     newtodos[toDoIndex].done = true
     setToDos(newtodos)
   }
@@ -50,7 +50,7 @@ function App() {
             key={todo.text}
             text={todo.text}
             done={todo.done}
-            onComplete={completeToDo}
+            onComplete={()=>completeToDo(todo.text)}
           />
         ))}
       </ToDoList>

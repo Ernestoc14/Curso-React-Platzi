@@ -1,10 +1,11 @@
-import ToDoCounter from './components/TodoCounter';
-import ToDoSearch from './components/ToDoSearch';
-import ToDoList from './components/ToDoList';
-import ToDoItem from './components/ToDoItem';
-import CreateToDoButton from './components/CreateToDoButton';
+import ToDoCounter from '../components/TodoCounter';
+import ToDoSearch from '../components/ToDoSearch';
+import ToDoList from '../components/ToDoList';
+import ToDoItem from '../components/ToDoItem';
+import CreateToDoButton from '../components/CreateToDoButton';
+import useLocalStorage from '../App/useLocalStorage';
+import '../App/App.css';
 import React from 'react'
-import './App.css';
 
 // const todos = [
 //   { text: 'Homeworks', done: false },
@@ -12,28 +13,6 @@ import './App.css';
 //   { text: 'Take out the Trash', done: false }
 // ];
 // localStorage.setItem('TODOS_V1', JSON.stringify(todos))
-
-// Custom Hook to use LocalStorage
-function useLocalStorage(itemName, initialValue){
-  const localStorageItems = localStorage.getItem(itemName)
-  let parsedItems
-
-  // If there is no item in the localStorage, we set the initial value
-  if(!localStorageItems) {
-    localStorage.setItem(itemName, JSON.stringify(initialValue))
-    parsedItems = initialValue
-  }else{
-    // If there is an item in the localStorage, we parse it
-    parsedItems = JSON.parse(localStorageItems)
-  }
-
-  const [item, setItem] = React.useState(parsedItems)
-  const saveItem = (newItems) => {
-    localStorage.setItem(itemName, JSON.stringify(newItems))
-    setItem(newItems)
-  }
-  return [item, saveItem]
-}
 
 function App() {
   const [toDos, saveToDos] = useLocalStorage('TODOS_V1', [])

@@ -6,11 +6,12 @@ import CreateToDoButton from './components/CreateToDoButton';
 import React from 'react'
 import './App.css';
 
-const todos = [
-  { text: 'Homeworks', done: false },
-  { text: 'Go for a walk', done: true },
-  { text: 'Take out the Trash', done: false }
-];
+// const todos = [
+//   { text: 'Homeworks', done: false },
+//   { text: 'Go for a walk', done: true },
+//   { text: 'Take out the Trash', done: false }
+// ];
+// localStorage.setItem('TODOS_V1', JSON.stringify(todos))
 
 function App() {
   const localStorageToDos = localStorage.getItem('TODOS_V1')
@@ -26,7 +27,7 @@ function App() {
   const [toDos, setToDos] = React.useState(parsedToDos)
   const [searchValue, setSearchValue] = React.useState('')
 
-  const doneToDos = toDos.filter(todos => todos.done).length
+  const doneToDos = toDos.filter(todo => todo.done).length
   const totalToDos = toDos.length
 
   const searchedToDos = toDos.filter(
@@ -37,18 +38,23 @@ function App() {
     }
   )
 
+    const saveToDos = (newtodos) => {
+      localStorage.setItem('TODOS_V1', JSON.stringify(newtodos))
+      setToDos(newtodos)
+    }
+
   const completeToDo = (text) => {
-    const newtodos = [...todos]
+    const newtodos = [...toDos]
     const toDoIndex = newtodos.findIndex(todo => todo.text === text)
     newtodos[toDoIndex].done = true
-    setToDos(newtodos)
+    saveToDos(newtodos)
   }
   
   const deleteToDo = (text) => {
-    const newtodos = [...todos]
+    const newtodos = [...toDos]
     const toDoIndex = newtodos.findIndex(todo => todo.text === text)
     newtodos.splice(toDoIndex, 1)
-    setToDos(newtodos)
+    saveToDos(newtodos)
   }
 
   return (

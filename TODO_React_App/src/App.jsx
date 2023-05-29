@@ -13,7 +13,17 @@ const todos = [
 ];
 
 function App() {
-  const [toDos, setToDos] = React.useState(todos)
+  const localStorageToDos = localStorage.getItem('TODOS_V1')
+  let parsedToDos
+
+  if(!localStorageToDos) {
+    localStorage.setItem('TODOS_V1', JSON.stringify([]))
+    parsedToDos = []
+  }else{
+    parsedToDos = JSON.parse(localStorageToDos)
+  }
+
+  const [toDos, setToDos] = React.useState(parsedToDos)
   const [searchValue, setSearchValue] = React.useState('')
 
   const doneToDos = toDos.filter(todos => todos.done).length

@@ -1,9 +1,9 @@
-import ToDoCounter from '../components/TodoCounter';
-import ToDoSearch from '../components/ToDoSearch';
-import ToDoList from '../components/ToDoList';
-import ToDoItem from '../components/ToDoItem';
-import CreateToDoButton from '../components/CreateToDoButton';
-import useLocalStorage from '../App/useLocalStorage';
+import ToDoCounter from '../components/TodoCounter.jsx';
+import ToDoSearch from '../components/ToDoSearch.jsx';
+import ToDoList from '../components/ToDoList.jsx';
+import ToDoItem from '../components/ToDoItem.jsx';
+import CreateToDoButton from '../components/CreateToDoButton.jsx';
+import useLocalStorage from '../App/useLocalStorage.jsx';
 import '../App/App.css';
 import React from 'react'
 

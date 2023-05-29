@@ -1,4 +1,4 @@
-import ToDoCounter from '../components/TodoCounter.jsx';
+import {ToDoCounter} from '../components/TodoCounter.jsx';
 import ToDoSearch from '../components/ToDoSearch.jsx';
 import ToDoList from '../components/ToDoList.jsx';
 import ToDoItem from '../components/ToDoItem.jsx';

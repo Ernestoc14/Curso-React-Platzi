@@ -10,12 +10,19 @@ import React from 'react'
 // const todos = [
 //   { text: 'Homeworks', done: false },
 //   { text: 'Go for a walk', done: true },
-//   { text: 'Take out the Trash', done: false }
+//   { text: 'Take out the Trash', done: false },
+// { text: 'Lava ca LOla', done: true },
+//   { text: 'Tamara es alacni', done: false }
 // ];
 // localStorage.setItem('TODOS_V1', JSON.stringify(todos))
 
 function App() {
-  const [toDos, saveToDos] = useLocalStorage('TODOS_V1', [])
+  const {
+    item: toDos, 
+    saveItem: saveToDos,
+    loading,
+    error
+  } = useLocalStorage('TODOS_V1', [])
   const [searchValue, setSearchValue] = React.useState('')
 
   const doneToDos = toDos.filter(todo => todo.done).length
@@ -54,6 +61,9 @@ function App() {
         setSearchValue={setSearchValue}
       />
       <ToDoList>
+        {loading ? <p>Loading...</p> : <p>ba</p>}
+        {!loading && searchedToDos.length === 0 && <p>Create your first To Do</p>}
+        {error ?  <p>Error</p> : null }
         {searchedToDos.map(todo => (
           <ToDoItem
             key={todo.text}

@@ -4,6 +4,9 @@ import ToDoList from '../components/ToDoList.jsx';
 import ToDoItem from '../components/ToDoItem.jsx';
 import CreateToDoButton from '../components/CreateToDoButton.jsx';
 import useLocalStorage from '../App/useLocalStorage.jsx';
+import ToDosError from '../components/ToDosError.jsx';
+import ToDosLoading from '../components/ToDosLoading.jsx';
+import EmptyToDos from '../components/EmptyToDos.jsx';
 import '../App/App.css';
 import React from 'react'
 
@@ -61,9 +64,9 @@ function App() {
         setSearchValue={setSearchValue}
       />
       <ToDoList>
-        {loading ? <p>Loading...</p> : <p>ba</p>}
-        {!loading && searchedToDos.length === 0 && <p>Create your first To Do</p>}
-        {error ?  <p>Error</p> : null }
+        {loading && <ToDosLoading/>}
+        {!loading && searchedToDos.length === 0 && <EmptyToDos/>}
+        {error &&  <ToDosError/> }
         {searchedToDos.map(todo => (
           <ToDoItem
             key={todo.text}

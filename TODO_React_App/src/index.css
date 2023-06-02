@@ -3,7 +3,5 @@
 @tailwind utilities;
 
 body{
-    /* background: #202023; 
-    white mode: F0E7DB  */
-    background: gray;
+    background: #353536; 
 }

@@ -27,7 +27,7 @@ function useLocalStorage(itemName, initialValue) {
                 setLoading(false)
             }
         }, 2300)
-    }, []);
+    }, [initialValue]);
     
     const saveItem = (newItems) => {
         localStorage.setItem(itemName, JSON.stringify(newItems))

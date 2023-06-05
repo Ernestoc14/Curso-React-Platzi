@@ -53,7 +53,10 @@ function App() {
           </ToDoList>
         )}
       </ToDoContext.Consumer>
-      <CreateToDoButton />
+      <CreateToDoButton 
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+      />
       {openModal && (
         <Modal>
           Add ToDo

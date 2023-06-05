@@ -1,9 +1,9 @@
-function CreateToDoButton(){
+function CreateToDoButton({setOpenModal}){
     return(
         <button className="bg-gray-700 text-white rounded-lg p-2 mt-10"
             onClick={
-            (event) => {
-                console.log(event.target)
+            () => {
+                setOpenModal(openModal => !openModal)
             }} 
         >Add a New ToDo</button>
     )

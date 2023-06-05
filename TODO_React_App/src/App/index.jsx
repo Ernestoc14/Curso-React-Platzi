@@ -7,8 +7,9 @@ import ToDosError from '../components/ToDosError.jsx';
 import ToDosLoading from '../components/ToDosLoading.jsx';
 import EmptyToDos from '../components/EmptyToDos.jsx';
 import '../App/App.css';
-import {ToDoContext}  from '../ToDoContext/ToDoContext.jsx';
+import { ToDoContext } from '../ToDoContext/ToDoContext.jsx';
 import React from 'react';
+import Modal from '../ToDoModal.jsx';
 // const todos = [
 //   { text: 'Homeworks', done: false },
 //   { text: 'Go for a walk', done: true },
@@ -24,7 +25,9 @@ function App() {
     loading,
     searchedToDos,
     completeToDo,
-    deleteToDo
+    deleteToDo,
+    openModal,
+    setOpenModal
   } = React.useContext(ToDoContext)
 
   return (
@@ -51,6 +54,11 @@ function App() {
         )}
       </ToDoContext.Consumer>
       <CreateToDoButton />
+      {openModal && (
+        <Modal>
+          Add ToDo
+        </Modal>
+      )}
     </>
   )
 }

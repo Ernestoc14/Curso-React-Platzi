@@ -1,9 +1,13 @@
 import searchIcon from '../assets/search-icon.svg';
+import React from 'react';
+import { ToDoContext } from '../ToDoContext/ToDoContext';
 
-function ToDoSearch({
-    searchValue,
-    setSearchValue,
-}){
+function ToDoSearch(){
+    const {
+        searchValue,
+        setSearchValue,
+    } = React.useContext(ToDoContext)
+    
     return(
         <div className='flex justify-center relative'>
             <input 

@@ -23,20 +23,20 @@ function useLocalStorage(itemName, initialValue) {
                 setLoading(false)
             }
             catch(error) {
-                setError(error)
+                setError(true)
                 setLoading(false)
             }
         }, 2300)
-    }, [initialValue]);
-    
+    });
+
     const saveItem = (newItems) => {
         localStorage.setItem(itemName, JSON.stringify(newItems))
         setItem(newItems)
     }
     return {
-        item, 
-        saveItem, 
-        loading, 
+        item,
+        saveItem,
+        loading,
         error
     }
 }

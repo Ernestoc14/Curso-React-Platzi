@@ -2,10 +2,10 @@ import ReactDOM from "react-dom";
 
 function Modal({ children }) {
     return ReactDOM.createPortal(
-        <div className="Modal">
+        <div className="w-full h-24 flex justify-center text-4xl">
             {children}
         </div>,
-        document.getElementById("modal")
+        document.getElementById("modalbackground")
     )
 }
 

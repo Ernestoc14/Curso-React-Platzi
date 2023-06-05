@@ -8,6 +8,7 @@ import ToDosLoading from '../components/ToDosLoading.jsx';
 import EmptyToDos from '../components/EmptyToDos.jsx';
 import '../App/App.css';
 import {ToDoContext}  from '../ToDoContext/ToDoContext.jsx';
+import React from 'react';
 // const todos = [
 //   { text: 'Homeworks', done: false },
 //   { text: 'Go for a walk', done: true },
@@ -18,6 +19,13 @@ import {ToDoContext}  from '../ToDoContext/ToDoContext.jsx';
 // localStorage.setItem('TODOS_V1', JSON.stringify(todos))
 
 function App() {
+  const {
+    error,
+    loading,
+    searchedToDos,
+    completeToDo,
+    deleteToDo
+  } = React.useContext(ToDoContext)
 
   return (
     <>
@@ -25,13 +33,7 @@ function App() {
       <ToDoSearch />
 
       <ToDoContext.Consumer>
-        {({
-          error,
-          loading,
-          searchedToDos,
-          completeToDo,
-          deleteToDo
-        }) => (
+        {() => (
           <ToDoList>
             {loading && <ToDosLoading />}
             {!loading && searchedToDos.length === 0 && <EmptyToDos />}

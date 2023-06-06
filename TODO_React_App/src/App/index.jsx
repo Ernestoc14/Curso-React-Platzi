@@ -10,6 +10,7 @@ import '../App/App.css';
 import { ToDoContext } from '../ToDoContext/ToDoContext.jsx';
 import React from 'react';
 import Modal from '../ToDoModal.jsx';
+import ToDoForm from '../components/ToDoForm.jsx';
 // const todos = [
 //   { text: 'Homeworks', done: false },
 //   { text: 'Go for a walk', done: true },
@@ -59,7 +60,7 @@ function App() {
       />
       {openModal && (
         <Modal>
-          Add ToDo
+          <ToDoForm/>
         </Modal>
       )}
     </>

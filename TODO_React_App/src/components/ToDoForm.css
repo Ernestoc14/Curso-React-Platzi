@@ -1,0 +1,29 @@
+textarea::placeholder{
+    color: #A5A5A5;
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+textarea:focus{
+    outline: #61DAFA;
+    border: #61DAFA solid 2px ;
+}
+
+.ToDoForm-button {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 400;
+    width: 120px;
+    height: 48px;
+    border-radius: 2px;
+    border: none;
+}
+.ToDoForm-button--cancel{
+    background: transparent;
+}
+
+.ToDoForm-button--add{
+    background: #61DAFA;
+    box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
+}

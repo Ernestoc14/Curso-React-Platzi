@@ -12,7 +12,7 @@ function ToDoSearch(){
         <div className='flex justify-center relative'>
             <input 
                 placeholder="Search a Task" 
-                className="border-solid border 2 rounded-xl border-gray-500 w-1/2 pl-2 pt-1 pb-1 mb-20"
+                className="border-solid border-2 rounded-xl border-black w-1/2 pl-2 pt-1 pb-1 mb-20"
                 value={searchValue}
                 onChange={(event) => {
                     setSearchValue(event.target.value)
